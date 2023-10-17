@@ -4,6 +4,7 @@ import (
 	"cloud_storage/internal/utils"
 	"database/sql"
 	"github.com/gin-gonic/gin"
+	_ "github.com/lib/pq"
 	"log"
 	"net/http"
 )
@@ -23,14 +24,18 @@ func (h *Handler) getFiles(c *gin.Context) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	db.Close()
+	defer db.Close()
 
 	query :=
 		"select * from file_data where user_id=$1"
-	rows, _ := db.Query(query, userId.UserId)
+	rows, err := db.Query(query, userId.UserId)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	var files []utils.File
 	for rows.Next() {
+
 		var fileId int
 		var fileName string
 		var fileData []byte

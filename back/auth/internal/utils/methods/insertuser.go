@@ -4,6 +4,7 @@ import (
 	"cloud_storage/internal/utils"
 	"cloud_storage/internal/utils/errors"
 	"database/sql"
+	_ "github.com/lib/pq"
 )
 
 func InsertUser(user utils.UserData, db *sql.DB) error {

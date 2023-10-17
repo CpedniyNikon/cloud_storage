@@ -3,6 +3,7 @@ package methods
 import (
 	"cloud_storage/internal/utils"
 	"database/sql"
+	_ "github.com/lib/pq"
 )
 
 func DoesExists(user utils.UserData, db *sql.DB) bool {

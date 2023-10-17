@@ -5,6 +5,7 @@ import (
 	"cloud_storage/internal/utils/methods"
 	"database/sql"
 	"github.com/gin-gonic/gin"
+	_ "github.com/lib/pq"
 	"log"
 	"net/http"
 )

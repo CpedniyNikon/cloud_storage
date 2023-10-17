@@ -3,6 +3,7 @@ package methods
 import (
 	"cloud_storage/internal/utils"
 	"database/sql"
+	_ "github.com/lib/pq"
 )
 
 func InsertUser(file utils.File, db *sql.DB) error {

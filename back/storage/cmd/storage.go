@@ -2,7 +2,7 @@ package main
 
 import (
 	"cloud_storage/internal/handler"
-	server "cloud_storage/pkg/server"
+	"cloud_storage/pkg/server"
 	"fmt"
 	"github.com/spf13/viper"
 	"log"
