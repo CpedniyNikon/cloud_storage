@@ -5,5 +5,6 @@ create table user_data(
 
 create table file_data(
       file_id serial unique not null,
-      byte_array bytea not null,
+      file_name text not null,
+      file_data bytea not null,
       user_id int references user_data (user_id) not null);
