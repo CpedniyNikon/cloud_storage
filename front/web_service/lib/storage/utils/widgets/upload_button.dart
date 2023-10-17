@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:universal_html/html.dart' as html;
+import 'package:web_service/global_variables/userdata.dart';
+import 'package:web_service/storage/requests/loadup.dart';
 
 import 'package:web_service/storage/utils/functions/downloadFile.dart';
 
@@ -23,7 +25,8 @@ class FileUploadButton extends StatelessWidget {
             reader.onLoadEnd.listen((e) {
               var uploadedImage = reader.result as Uint8List;
               String base64Image = base64Encode(uploadedImage);
-              downloadFile(base64Image, file.name);
+              upload(file.name, base64Image, UserData.userId);
+              // downloadFile(base64Image, file.name);
             });
             reader.readAsArrayBuffer(file);
           }

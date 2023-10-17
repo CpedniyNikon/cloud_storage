@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:web_service/auth/requests/login.dart';
+import 'package:web_service/auth/requests/register.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -66,6 +68,16 @@ class LoginPage extends StatelessWidget {
                   ],
                 ),
               ),
+              FloatingActionButton(
+                  heroTag: null,
+                  onPressed: () {
+                login(loginController.text, passwordController.text);
+              }),
+              FloatingActionButton(
+                  heroTag: null,
+                  onPressed: () {
+                register(loginController.text, passwordController.text);
+              }),
             ],
           ),
         ),

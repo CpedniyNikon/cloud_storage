@@ -6,10 +6,9 @@ import 'package:get/get.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
-
-Future<void> login(String login, String password) async {
+Future<void> register(String login, String password) async {
   debugPrint("login");
-  var url = 'http://localhost:8080/auth/sign-in';
+  var url = 'http://localhost:8080/auth/sign-up';
   await http
       .post(Uri.parse(url),
       headers: {},
@@ -21,11 +20,5 @@ Future<void> login(String login, String password) async {
     debugPrint("Response status: ${response.statusCode}");
     debugPrint("Response body: ${response.contentLength}");
     debugPrint(response.body);
-    var output = json.decode(response.body);
-    if (response.statusCode == HttpStatus.ok) {
-      UserData.userId = output["userId"];
-      debugPrint("id := ${UserData.userId}");
-      Get.toNamed(Routes.storage);
-    }
   });
 }

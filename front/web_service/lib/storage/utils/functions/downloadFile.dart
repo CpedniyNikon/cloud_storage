@@ -1,15 +1,16 @@
 import 'dart:convert';
 import 'package:universal_html/html.dart' as html;
+import 'package:web_service/storage/utils/File.dart';
 
-void downloadFile(String base64Data, String fileName) {
-  final byteData = const Base64Decoder().convert(base64Data);
+void downloadFile(File file) {
+  final byteData = const Base64Decoder().convert(file.base64Data);
   final blob = html.Blob([byteData]);
 
   final url = html.Url.createObjectUrlFromBlob(blob);
   final anchor = html.document.createElement('a') as html.AnchorElement
     ..href = url
     ..style.display = 'none'
-    ..download = fileName;
+    ..download = file.filename;
 
   html.document.body?.children.add(anchor);
   anchor.click();
