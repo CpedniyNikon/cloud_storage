@@ -1,1 +1,8 @@
-# cloud_storage
+Запуск бекенда 
+```
+cd ./back/deployments
+docker compose up --build
+
+```
+
+
