@@ -1,1 +1,6 @@
 /back/db/data/
+/back/.idea
+/back/auth/.idea
+/back/storage/.idea
+.gitignore
+.idea
