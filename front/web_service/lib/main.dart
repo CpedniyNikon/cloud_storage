@@ -11,7 +11,7 @@ void main() {
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
     defaultTransition: Transition.fade,
-    home: LoginPage(),
+    home: const LoginPage(),
     getPages: AppPages.pages,
   ));
 }

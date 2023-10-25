@@ -1,8 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
-import 'package:web_service/global_variables/userdata.dart';
-import 'package:web_service/routes/routes.dart';
-import 'package:get/get.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 

@@ -8,11 +8,11 @@ abstract class AppPages {
   static final pages = [
     GetPage(
       name: Routes.login,
-      page: () => LoginPage(),
+      page: () => const LoginPage(),
     ),
     GetPage(
       name: Routes.storage,
-      page: () => const FileUploadPage(),
+      page: () => FileUploadPage(),
     ),
     GetPage(
       name: Routes.register,

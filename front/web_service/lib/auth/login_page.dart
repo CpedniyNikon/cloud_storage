@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:web_service/auth/requests/login.dart';
 import 'package:web_service/auth/requests/register.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   var loginController = TextEditingController();
   var passwordController = TextEditingController();
 
